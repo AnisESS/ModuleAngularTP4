@@ -26,7 +26,7 @@ export class ConsultActiviteComponent implements OnInit {
 
   ngOnInit() {
   }
-
+// Fonction removeElem(...)
   removeElem(index : number){
     this.activiteService.objectifs.splice(index, 1) ; 
     this.monRouteur.navigate(['']) ;
