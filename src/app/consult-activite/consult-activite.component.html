@@ -1,23 +1,24 @@
 <p style="font-weight: bold">
-  Detail de l'activité:
+  Detail de l'activité: {{monParam}}
 </p>
 
-
 <ol>
+  
   <li>
-    Nom de l'activité : <span *ngIf="!modifier"><b>{{monParam}}</b></span>
-                        <input *ngIf="modifier" type="text" [value]="monParam" name="champModifier" [(ngModel)]="monParam">
-  </li>
-  <li *ngIf="monParam1">
-    Paramètre 2 transmis : {{monParam1}}
+    Nom de l'activité : <span *ngIf="!modifier"><b>{{titre}}</b></span>
+                        <input *ngIf="modifier" type="text" [value]="titre" name="champModifier" [(ngModel)]="titre">
   </li>
 
+  <li>
+      Description de l'activité : <span *ngIf="!modifier"><b>{{desc}}</b></span>
+      <textarea *ngIf="modifier" class="form-control" [(ngModel)]="desc" placeholder="Description" rows="3"></textarea>
+  </li>
 
-  <div class="btnDiv">
-  <input type="button" value="Supprimer" (click)="removeElem(indice)" class="btnSupprimer">
-  <input *ngIf="modifier" type="button" value="Sauvegarder" (click)="sauvegarderElem(indice)" class="btnModifier">
-  <input *ngIf="!modifier" type="button" value="Modifier" (click)="modifierElem(indice)" class="btnModifier">
-  <input *ngIf="!modifier" type="button" value="Retour" (click)="retourHome()" class="btnRetour">
+<div class="btnDiv">
+  <input type="button" value="Supprimer" (click)="removeElem(indice)" class="btn btn-danger">
+  <input *ngIf="modifier" type="button" value="Sauvegarder" (click)="sauvegarderElem(indice)" class="btn btn-primary">
+  <input *ngIf="!modifier" type="button" value="Modifier" (click)="modifierElem(indice)" class="btn btn-primary">
+  <input *ngIf="!modifier" type="button" value="Retour" (click)="retourHome()" class="btn btn-success">
 </div>
 
 </ol>

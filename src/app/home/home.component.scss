@@ -38,4 +38,16 @@ input.btn{
     cursor:pointer;
 }
 
+.container.list {
+    display : grid ;
+    grid-template-columns : 100% auto ;
+    padding : .4em 1.3em;
+}
 
+
+
+@media (min-width: 576px) {
+    .card {
+      width: 300px !important;
+    }
+  }

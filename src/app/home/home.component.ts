@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   btnText: string  = "Ajouter un item";     
  // j'ai ajoutééééé
   objectifText : string = "Mon nouvel objectif";
-  
+  description : string ; 
 
   constructor(private monRouteur : Router , public activiteService : ActiviteService) { }
   ngOnInit() {
@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
   ajoutItem()
   {
     this.activiteService.objectifs.push(this.objectifText) ;
+    this.activiteService.tabActivite.push({titre : this.objectifText, description : this.description}) ; 
     this.nbItems = this.activiteService.objectifs.length;
     this.objectifText = '';
     // setTimeout(()=>{
